@@ -2,6 +2,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+
+/**
+ * Содержит константы для двоичных единиц измерения
+ */
 public enum SizeUnitBinaryPostfixes {
     B(1L),
     KB(B.unitBase << 10),
@@ -13,6 +17,9 @@ public enum SizeUnitBinaryPostfixes {
 
     private final Long unitBase;
 
+    /**
+     * @return возвращает двоичные единицы измерения в порядке убывания
+     */
     public static List<SizeUnitBinaryPostfixes> unitsInDescending() {
         List<SizeUnitBinaryPostfixes> list = Arrays.asList(values());
         Collections.reverse(list);

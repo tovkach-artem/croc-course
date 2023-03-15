@@ -3,6 +3,11 @@ import java.util.List;
 public class UnitBinaryService {
 
 
+    /**
+     * Выводит на экран размер в двоичных еденицах измерения.
+     * @param size размер в байтах
+     * @param requiredHumanReadable необходимость вывода размера в человекочитаемом виде
+     */
     public static void printBytes(long size, boolean requiredHumanReadable) {
         if (size < 0) {
             throw new IllegalArgumentException("Неверный размер файла " + size);
@@ -14,6 +19,12 @@ public class UnitBinaryService {
         }
     }
 
+    /**
+     * Выводит на экран размер в двоичных еденицах измерения.
+     * По умолчанию вывод осуществоялется в человекочитаемом виде.
+     * Если хотите избежать поведения по умолчанию {@link #printBytes(long size, boolean requiredHumanReadable)}
+     * @param size размер в байтах
+     */
     public static void printBytes(long size) {
         printBytes(size, true);
     }
