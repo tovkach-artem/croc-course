@@ -2,7 +2,7 @@ package ru.croc.course.decommission;
 
 import ru.croc.course.support.entity.BaseEntity;
 import ru.croc.course.vehicle.Vehicle;
-
+/** Отражает документ списание транспортного средства */
 public class VehicleDecommission implements BaseEntity<Long> {
 
     private Long id;

@@ -1,9 +1,6 @@
 package ru.croc.course.decommission;
 
-import ru.croc.course.report.ReportProvider;
 import ru.croc.course.vehicle.Vehicle;
-
-import java.util.List;
-
+/** Интерфейс содержит общее поведение для всех сервисов списания транспортных средств */
 public interface VehicleDecommissionService extends DecommissionService<Vehicle>{
 }
