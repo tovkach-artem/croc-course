@@ -4,7 +4,7 @@ import ru.croc.course.support.entity.BaseEntity;
 import ru.croc.course.vehicle.Vehicle;
 
 import java.time.LocalDate;
-
+/** Отражает документ аренда транспортного средства */
 public class VehicleRental implements BaseEntity<Long> {
     private Long id;
     private Vehicle vehicle;
