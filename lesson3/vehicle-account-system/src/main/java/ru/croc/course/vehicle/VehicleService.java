@@ -10,6 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Сервис по работе с транспортными средствами.
+ */
 public class VehicleService implements ReportProvider<StringBasedReport> {
     private final VehicleRepository vehicleRepository;
     private final VehicleDecommissionService decommissionService;
@@ -21,11 +24,17 @@ public class VehicleService implements ReportProvider<StringBasedReport> {
         this.rentalService = rentalService;
     }
 
-
+    /**
+     * Позволяет зарегистрировать новое транспортное средство.
+     */
     public void register(Vehicle vehicle) {
         vehicleRepository.save(vehicle);
     }
-
+    /**
+     * Позволяет списать транспортное средство.
+     * Для этого пытается списать его через сервис списания, в случае, если попытка удачная,
+     * удаляет транспортное средство из репозитория.
+     */
     public boolean writeOff(Vehicle vehicle) {
         if (decommissionService.writeOff(vehicle)) {
             vehicleRepository.delete(vehicle);
@@ -33,14 +42,14 @@ public class VehicleService implements ReportProvider<StringBasedReport> {
         }
         return false;
     }
-
+    /** Позволяет получить список свободных транспортных средств конкретной категории на определенную дату*/
     public List<Vehicle> getFreeByCategoryAndDate(VehicleCategory vehicleCategory, LocalDate date) {
         return vehicleRepository.findAll().stream()
                 .filter(vehicle -> vehicle.getVehicleCategory().equals(vehicleCategory))
                 .filter(vehicle -> !rentalService.isRentedOnDate(vehicle, date))
                 .collect(Collectors.toList());
     }
-
+    /** Позволяет получить список арендованных транспортных средств конкретной категории на определенную дату*/
     public List<Vehicle> getRentedByCategoryAndDate(VehicleCategory vehicleCategory, LocalDate date) {
         return vehicleRepository.findAll().stream()
                 .filter(vehicle -> vehicle.getVehicleCategory().equals(vehicleCategory))
@@ -48,7 +57,7 @@ public class VehicleService implements ReportProvider<StringBasedReport> {
                 .collect(Collectors.toList());
     }
 
-
+    /** Позволяет получить сводный отчет о транспортных средств*/
     @Override
     public StringBasedReport getReportOnDate(LocalDate date) {
         String reportContent = "Отчет за " + date + "\n" + Arrays.stream(VehicleCategory.values())

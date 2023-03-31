@@ -3,7 +3,7 @@ package ru.croc.course.vehicle;
 import ru.croc.course.decommission.Serviceable;
 import ru.croc.course.rental.Rentable;
 import ru.croc.course.support.entity.BaseEntity;
-
+/** Базовая сущность для всех транспортных средств */
 public abstract class Vehicle implements Serviceable, Rentable, BaseEntity<Long> {
     private Long id;
     private String number;
@@ -48,7 +48,7 @@ public abstract class Vehicle implements Serviceable, Rentable, BaseEntity<Long>
                 ", vehicleCategory=" + vehicleCategory +
                 '}';
     }
-
+    /** Здесь можно добавить кастомную логику по которой будет определяться исправность/неисправность автомобиля*/
     @Override
     public boolean isFaulty() {
         return true;
