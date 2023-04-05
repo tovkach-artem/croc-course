@@ -17,6 +17,9 @@ public class Employee {
         this.manager = manager;
     }
 
+    /** Определяет, является ли сотрудник директором:
+     * директором является сотрудник у которого нет менеджера.
+     */
     public boolean isDirector() {
         return manager == null;
     }
@@ -55,6 +58,7 @@ public class Employee {
                 '}' ;
     }
 
+    /** Переопределяет метод equals на основе id так как оно поле уникальное */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,7 +66,7 @@ public class Employee {
         Employee employee = (Employee) o;
         return Objects.equals(id, employee.id);
     }
-
+    /** Переопределяет метод hashCode на основе id так как оно поле уникальное */
     @Override
     public int hashCode() {
         return Objects.hash(id);

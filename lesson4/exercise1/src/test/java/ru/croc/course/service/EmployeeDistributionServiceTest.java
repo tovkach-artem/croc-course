@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/** Класс тестирует функциональность сервиса {@link EmployeeDistributionService} */
 public class EmployeeDistributionServiceTest {
     private static final Employee DIRECTOR_1 = new Employee(1, "e1", null);
     private static final Employee DIRECTOR_2 = new Employee(2, "e3", null);
@@ -23,7 +24,9 @@ public class EmployeeDistributionServiceTest {
     private final EmployeeDistributionService employeeDistributionService = new EmployeeDistributionService();
 
 
-
+    /** Данный тест позволяет убедиться, что определение директоров и полного списка
+     * их подчиненных на основе разрозненных данных о сотрудниках происходит корректно.
+     */
     @Test
     void shouldReturnDirectorsAssociatedToAllSubordinates() {
         Map<Employee, List<Employee>> expected = new HashMap<>();
@@ -36,7 +39,9 @@ public class EmployeeDistributionServiceTest {
         Assertions.assertThat(actual).containsAllEntriesOf(expected);
         Assertions.assertThat(actual.keySet()).hasSize(3);
     }
-
+    /** Данный тест позволяет убедиться, что определение списка директоров отсортированных по количеству
+     * общих подчиненны и имени руководителя на основании разрозненных данных о сотрудниках происходит корректно.
+     */
     @Test
     void shouldReturnDirectorsSortedBySubordinatesCountAndName() {
         List<Employee> actual = employeeDistributionService.getSortedDirectorsByAllSubordinatesCountAndName(getTestEmployees());
@@ -46,7 +51,9 @@ public class EmployeeDistributionServiceTest {
         Assertions.assertThat(actual.get(2)).isEqualTo(DIRECTOR_3);
         Assertions.assertThat(actual).hasSize(3);
     }
-
+    /** Данный тест позволяет убедиться, что определение менеджеров и списка их непосредственных
+     * подчиненных на основании разрозненных данных о сотрудниках происходит корректно.
+     */
     @Test
     void shouldReturnManagersAssociatedToDirectSubordinates() {
         Map<Employee, List<Employee>> expected = new HashMap<>();
@@ -65,7 +72,9 @@ public class EmployeeDistributionServiceTest {
         Assertions.assertThat(actual.keySet()).hasSize(7);
     }
 
-
+    /**
+     * Формирует список тестовых данных, имитирующий разрозненные данные о сотрудниках.
+     */
     static List<Employee> getTestEmployees() {
         return List.of(DIRECTOR_1, DIRECTOR_2, DIRECTOR_3, EMPLOYEE4, EMPLOYEE5, EMPLOYEE6, EMPLOYEE7, EMPLOYEE8, EMPLOYEE9, EMPLOYEE10);
     }
