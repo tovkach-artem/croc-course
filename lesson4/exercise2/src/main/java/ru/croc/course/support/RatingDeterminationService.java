@@ -8,11 +8,11 @@ import ru.croc.course.author.AuthorService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/** Высокоуровневый сервис по работе с выставлением рейтинга */
 public class RatingDeterminationService {
-
+    /** Сервис по работе со статьями */
     private final ArticleService articleService;
-
+    /** Сервис по работе с авторами */
     private final AuthorService authorService;
 
     public RatingDeterminationService(ArticleService articleService, AuthorService authorService) {
@@ -20,6 +20,7 @@ public class RatingDeterminationService {
         this.authorService = authorService;
     }
 
+    /** Метод позволяет получить авторов их рейтинг на основе качества всех статей*/
     public Map<Author, Double> determineAuthorsRating() {
         Map<Author, Double> authorToRating = new HashMap<>();
         List<Author> authors = authorService.getAll();
@@ -28,7 +29,7 @@ public class RatingDeterminationService {
         }
         return authorToRating;
     }
-
+    /** Метод позволяет рейтинг автора на основе качества всех его статей*/
     public double determineAuthorRating(Author author) {
         List<Article> articles = author.getArticles();
         double totalNumberOfPoints = 0.0;

@@ -1,12 +1,15 @@
 package ru.croc.course.article;
 
 import ru.croc.course.author.Author;
-
+/** Статья */
 public class Article {
-
+    /** Уникальный идентификатор */
     private Integer id;
+    /** Заголовок */
     private String title;
+    /** Текст(Содержание) */
     private String text;
+    /** Автор */
     private Author author;
 
     public Article(String title, String text) {

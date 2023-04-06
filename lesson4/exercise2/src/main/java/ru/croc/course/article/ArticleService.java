@@ -3,15 +3,19 @@ package ru.croc.course.article;
 import ru.croc.course.support.TextManipulationService;
 
 import java.util.*;
-
+/** Высокоуровневый сервис по работе со статьями
+ */
 public class ArticleService {
 
+    /** Сервис по работе с текстом */
     private final TextManipulationService textManipulationService;
 
     public ArticleService(TextManipulationService textManipulationService) {
         this.textManipulationService = textManipulationService;
     }
-
+    /** Метод позволяет получить оценку качества статьи:
+     * На данный момент качество статьи рассчитывается по принципу
+     * частоты использования слов из названия статьи в тексте.  */
     public double getArticleQuality(Article article) {
         String[] wordsInTitle = textManipulationService.getReducedToLowercaseWordsInText(article.getTitle());
         Set<String> uniqueWordsInTitle = new HashSet<String>(Arrays.asList(wordsInTitle));

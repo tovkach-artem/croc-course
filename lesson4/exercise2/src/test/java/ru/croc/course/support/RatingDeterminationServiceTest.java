@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/** Класс тестирующий функциональность сервиса по работе с выставлением рейтинга  */
 public class RatingDeterminationServiceTest {
 
     private ArticleService articleService;
@@ -31,14 +31,15 @@ public class RatingDeterminationServiceTest {
 
 
 
-
+    /** Метод подготавливает объект для модульного тестирования */
     @BeforeEach
     public void prepare() {
         this.articleService = Mockito.mock(ArticleService.class);
         this.authorService = Mockito.mock(AuthorService.class);
         this.ratingDeterminationService = new RatingDeterminationService(articleService, authorService);
     }
-
+    /** Данный тест позволяет убедиться, что коллекция Map, где ключом
+     * является автор, а значением его рейтинг формируется корректно. */
     @Test
     public void shouldReturnAuthorsAssociatedToRating() {
         Mockito.doReturn(List.of(AUTHOR_1, AUTHOR_2, AUTHOR_3)).when(authorService).getAll();

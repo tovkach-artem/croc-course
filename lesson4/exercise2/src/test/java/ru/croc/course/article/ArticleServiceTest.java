@@ -5,19 +5,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.croc.course.support.TextManipulationService;
-
+/** Класс тестирующий функциональность сервиса по работе со статьями */
 public class ArticleServiceTest {
 
 
     private TextManipulationService textManipulationService;
     private ArticleService articleService;
-
+    /** Метод подготавливает объект для модульного тестирования */
     @BeforeEach
     public void prepare() {
         this.textManipulationService = Mockito.mock(TextManipulationService.class);
         this.articleService = new ArticleService(textManipulationService);
     }
-
+    /** Данный тест позволяет убедиться, что расчет качества статьи производится корректно. */
     @Test
     public void shouldReturnArticleQuality() {
         Mockito.doReturn(new String[] {"hello", "world", "java", "croc", "croc", "corporation"})

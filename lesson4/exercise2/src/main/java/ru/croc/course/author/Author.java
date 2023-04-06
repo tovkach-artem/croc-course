@@ -3,10 +3,13 @@ package ru.croc.course.author;
 import ru.croc.course.article.Article;
 
 import java.util.List;
-
+/** Автор */
 public class Author {
+    /** Уникальный идентификатор */
     private Integer id;
+    /** Имя */
     private String name;
+    /** Стати */
     private List<Article> articles;
 
     public Author(String name, List<Article> articles) {
