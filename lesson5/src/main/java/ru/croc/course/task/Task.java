@@ -3,12 +3,18 @@ package ru.croc.course.task;
 import java.io.Serializable;
 import java.util.Objects;
 
+/** Модель задачи */
 public class Task implements Serializable {
     private static final long serialVersionUID = -4788240049115862362L;
+    /** Номер */
     private String number;
+    /** Заголовок */
     private String title;
+    /** Описание */
     private String description;
+    /** Исполнитель */
     private String executor;
+    /** Статус */
     private TaskStatus taskStatus;
 
     public Task(String number, String title, String description, String executor, TaskStatus taskStatus) {

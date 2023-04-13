@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+/** Консольная программа для сохранения прогресса  */
 public class SaveTasksShellCommand implements ShellCommand {
 
     private final TaskService taskService;

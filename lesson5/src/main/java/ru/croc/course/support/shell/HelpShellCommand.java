@@ -3,8 +3,14 @@ package ru.croc.course.support.shell;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Консольная команда help
+ */
 public class HelpShellCommand implements ShellCommand{
 
+    /**
+     * Список команд, которые обслуживаются командой help
+     */
     private List<ShellCommand> shellCommands;
 
     public HelpShellCommand(List<ShellCommand> shellCommands) {
@@ -26,6 +32,9 @@ public class HelpShellCommand implements ShellCommand{
         return Collections.emptyList();
     }
 
+    /**
+     * Выводить на консоль имя команды, ее описание и аргументы
+     */
     @Override
     public void handle(ShellCommandParsingResult shellCommandParsingResult) {
         for (ShellCommand shellCommand : shellCommands) {

@@ -5,7 +5,7 @@ import ru.croc.course.support.shell.ShellCommandParsingResult;
 import ru.croc.course.task.TaskService;
 
 import java.util.List;
-
+/** Консольная программа для удаления задач  */
 public class DeleteTaskShellCommand implements ShellCommand {
 
     private final TaskService taskService;

@@ -2,6 +2,7 @@ package ru.croc.course.support.shell;
 
 import java.util.Scanner;
 
+/** Стартер для консольного приложения */
 public class ShellApplicationRunner {
 
     private final ShellCommandDispatcher shellCommandDispatcher;
@@ -10,6 +11,8 @@ public class ShellApplicationRunner {
         this.shellCommandDispatcher = shellCommandDispatcher;
     }
 
+    /** Запускает консольное приложение.
+     * Считывает передваемые строки и делегирует их {@link ShellCommandDispatcher} */
     public void run() {
         Scanner scanner = new Scanner(System.in);
         while(true) {

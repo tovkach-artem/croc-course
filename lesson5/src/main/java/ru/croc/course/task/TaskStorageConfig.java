@@ -1,9 +1,10 @@
 package ru.croc.course.task;
 
 import java.io.File;
-
+/** Класс конфигурации хранилища задач */
 public class TaskStorageConfig {
 
+    /** Путь к файлу по-умолчанию, где будет хранилище, если не задать при создании другой путь */
     private static final String DEFAULT_PATH_TO_STORAGE = "database.txt";
 
     private String pathToStorage = DEFAULT_PATH_TO_STORAGE;

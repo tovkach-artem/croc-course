@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-
+/** Консольная программа для создания задач  */
 public class CreateTaskShellCommand implements ShellCommand {
 
     private final TaskService taskService;

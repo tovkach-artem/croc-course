@@ -2,8 +2,11 @@ package ru.croc.course.support.shell;
 
 import java.util.Map;
 
+/** Класс характеризует результат парсинга команды */
 public class ShellCommandParsingResult {
+    /** Название команды */
     private String name;
+    /** Аргументы и их значения */
     private Map<String, String> argumentNameToValue;
 
     public ShellCommandParsingResult(String name, Map<String, String> argumentNameToValue) {

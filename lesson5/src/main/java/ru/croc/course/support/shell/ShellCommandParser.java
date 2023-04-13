@@ -6,12 +6,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * Парсер команд.
+ */
 public class ShellCommandParser {
 
+    /** Шаблон для разделения названия команды и ее аргументов */
     private static final Pattern COMMAND_TO_ARGUMENTS = Pattern.compile("^(\\w+)\\s*(.*)$");
+    /** Шаблон для разделения названия аргументов и их значений */
     private static final Pattern ARGUMENT_NAME_TO_VALUE = Pattern.compile("(\\w+)=(\\w+)");
-
+    /** Обрабатывает строку и формирует из нее объект {@link ShellCommandParsingResult}.
+     * Если строка не соответствует объявленным паттернам, то выбрасывает
+     * исключение о том, что формат строки не верный. */
     public ShellCommandParsingResult parse(String shellCommand) {
         ShellCommandParsingResult shellCommandParsingResult;
 

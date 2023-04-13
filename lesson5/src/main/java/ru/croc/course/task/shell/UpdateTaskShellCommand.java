@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+/** Консольная программа для обновления задач  */
 public class UpdateTaskShellCommand implements ShellCommand {
 
     private final TaskService taskService;

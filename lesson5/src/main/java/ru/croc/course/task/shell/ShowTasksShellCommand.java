@@ -8,6 +8,7 @@ import ru.croc.course.task.TaskService;
 import java.util.Collections;
 import java.util.List;
 
+/** Консольная программа для вывода на экран всех задач  */
 public class ShowTasksShellCommand implements ShellCommand {
 
     private final TaskService taskService;
