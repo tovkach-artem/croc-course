@@ -1,0 +1,7 @@
+<Report type="AIR_TEMPERATURE_TO_ATMOSPHERIC_PRESSURE">
+  <meteorologicalDataSlice startDate="2023-05-15T00:00" endDate="2023-05-17T13:17">
+    <airTemperature max="28.0" min="11.0"/>
+    <atmosphericPressure max="28.0" min="11.0"/>
+    <aitTemperatureToAtmospherePressure max="0.25" min="0.021400778210116732"/>
+  </meteorologicalDataSlice>
+</Report>
