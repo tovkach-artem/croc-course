@@ -1,4 +1,7 @@
-package ru.croc.course.weather;
+package ru.croc.course.service;
+
+import ru.croc.course.database.entity.MeteorologicalData;
+import ru.croc.course.database.repository.MeteorologicalDataRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
