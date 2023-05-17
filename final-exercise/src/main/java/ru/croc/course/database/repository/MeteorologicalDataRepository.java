@@ -1,7 +1,9 @@
-package ru.croc.course.weather;
+package ru.croc.course.database.repository;
 
+import ru.croc.course.database.entity.MeteorologicalData;
 import ru.croc.course.support.db.DataSourceProvider;
 import ru.croc.course.support.sql.SqlQueryGenerator;
+import ru.croc.course.weather.ResultSetToMeteorologicalDateMapper;
 
 import java.sql.*;
 import java.time.LocalDateTime;
