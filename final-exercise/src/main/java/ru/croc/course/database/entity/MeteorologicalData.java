@@ -1,4 +1,4 @@
-package ru.croc.course.weather;
+package ru.croc.course.database.entity;
 
 import ru.croc.course.support.sql.Column;
 import ru.croc.course.support.sql.Table;
