@@ -1,7 +1,8 @@
-package ru.croc.course.weather;
+package ru.croc.course.mapper;
 
-import ru.croc.course.support.mapper.Mapper;
-import ru.croc.course.support.mapper.MappingException;
+import ru.croc.course.database.entity.MeteorologicalData;
+import ru.croc.course.mapper.Mapper;
+import ru.croc.course.exception.MappingException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
