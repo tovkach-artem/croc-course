@@ -1,4 +1,4 @@
-package ru.croc.course.support.mapper;
+package ru.croc.course.exception;
 
 public class MappingException extends RuntimeException{
 
