@@ -1,4 +1,4 @@
-package ru.croc.course.support.mapper;
+package ru.croc.course.mapper;
 
 /**
  * Данный интерфейс предназначен для реализации классами,
