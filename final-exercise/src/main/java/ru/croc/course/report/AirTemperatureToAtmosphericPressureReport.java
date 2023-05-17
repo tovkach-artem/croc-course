@@ -1,5 +1,7 @@
 package ru.croc.course.report;
 
+import ru.croc.course.dto.report.Report;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -7,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
  * Данный класс представляет собой объектную модель отчета "СООТНОШЕНИЕ ТЕМПЕРАТУРЫ ВОЗДУХА К АТМОСФЕРНОМУ ДАВЛЕНИЮ"
  * {@link ReportType#AIR_TEMPERATURE_TO_ATMOSPHERIC_PRESSURE}
  */
-public class AirTemperatureToAtmosphericPressureReport extends AbstractReport {
+public class AirTemperatureToAtmosphericPressureReport extends Report {
 
     /**
      * Тип отчета
